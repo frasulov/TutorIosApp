@@ -1,0 +1,38 @@
+PODS:
+  - Kingfisher (5.6.0)
+  - LMDFloatingLabelTextField (0.8)
+  - MapViewPlus (0.1.3):
+    - Kingfisher (~> 5.6.0)
+  - OTPFieldView (1.0.1)
+  - Realm (10.28.2):
+    - Realm/Headers (= 10.28.2)
+  - Realm/Headers (10.28.2)
+  - RealmSwift (10.28.2):
+    - Realm (= 10.28.2)
+
+DEPENDENCIES:
+  - LMDFloatingLabelTextField
+  - MapViewPlus
+  - OTPFieldView
+  - RealmSwift
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+    - LMDFloatingLabelTextField
+    - MapViewPlus
+    - OTPFieldView
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  Kingfisher: 1a50df6880a60bae26f3e21a0df3d17b892f5e0b
+  LMDFloatingLabelTextField: 7eda8d7d6fa6ccf38bab666fd5e6f0e680f2a373
+  MapViewPlus: 92608071766d967ebad6316d226ba99e3e1dfcb3
+  OTPFieldView: 700a752fe62c41d1c4914c78aa500fb30d97c255
+  Realm: e617c54ad0f566b3d0f6a2abae7010de05f252ac
+  RealmSwift: 8a516a8759d80d52ebcec1ff1076f5f5159f98b2
+
+PODFILE CHECKSUM: 53942afe03a65368a09b03b673cf8dba3de17004
+
+COCOAPODS: 1.11.3
