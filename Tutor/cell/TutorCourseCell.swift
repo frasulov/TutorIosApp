@@ -1,22 +1,20 @@
 //
-//  CourseSearchCell.swift
+//  TutorCourseCell.swift
 //  Tutor
 //
-//  Created by Fagan Rasulov on 26.07.22.
+//  Created by Fagan Rasulov on 02.08.22.
 //
 
 import UIKit
 
-class CourseSearchCell: UITableViewCell {
+class TutorCourseCell: UITableViewCell {
 
-    @IBOutlet weak var subcategory: UILabel!
-    @IBOutlet weak var category: UILabel!
-    @IBOutlet weak var price: UILabel!
-    @IBOutlet weak var createdBy: UILabel!
-    @IBOutlet weak var language: UILabel!
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var coursePrice: UILabel!
+    @IBOutlet weak var courseLanguage: UILabel!
+    @IBOutlet weak var courseSubCategory: UILabel!
+    @IBOutlet weak var courseCategory: UILabel!
+    @IBOutlet weak var courseTitle: UILabel!
     @IBOutlet weak var courseImage: UIImageView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

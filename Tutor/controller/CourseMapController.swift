@@ -31,7 +31,7 @@ class CourseMapController: UIViewController {
                     map.mapType = .hybrid
                 default:
                     map.mapType = .standard
-                }
+        }
     }
     
     

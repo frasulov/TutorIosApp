@@ -9,6 +9,7 @@ import UIKit
 
 class AccountController: UIViewController, UIScrollViewDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var profileEmail: UILabel!
     @IBOutlet weak var profileName: UILabel!
@@ -28,6 +29,10 @@ class AccountController: UIViewController, UIScrollViewDelegate {
         
         self.bottomView.layer.cornerRadius = 40
         self.bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        
+        self.tableView.layer.cornerRadius = 40
+        self.tableView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        self.tableView.showsVerticalScrollIndicator = false
         
     }
         

@@ -13,44 +13,10 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        // When you open the realm, specify that the schema
-        // is now using a newer version.
-        
-        // Use this configuration when opening realms
-
-        
-//        let app = App(id: "tutorapp-lngie")
-//        let apiKey = Credentials.userAPIKey("s3h93bI3dNGvfXKJxCyHzkE2DO8W3KmwYOSfO21CVTpRzOZ0nxXXA9tjVX56Plfg")
-//        app.login(credentials: apiKey) { (result) in
-//            switch result {
-//            case .failure(let error):
-//                print("Login failed: \(error.localizedDescription)")
-//            case .success(let user):
-//                print("Successfully logged in as user \(user)")
-//                // Now logged in, do something with user
-//                // Remember to dispatch to main if you are doing anything on the UI thread
-//            }
-//        }
-//
-//        let user = app.currentUser
-//        let partitionValue = "Clifford"
-////
-////        realm = try! Realm(configuration: user.configuration(partitionValue: partitionValue))
-//        var config = user!.configuration(partitionValue: partitionValue)
-//        config.schemaVersion = 8
-//        40.377022316833504, 49.859915048254784
-        
-        let config = Realm.Configuration(
-            schemaVersion: 12)
+        var config = Realm.Configuration.defaultConfiguration
+        config.schemaVersion = 14
         Realm.Configuration.defaultConfiguration = config
-        
-
-//        let realm = try! Realm()
-        
-        
         return true
     }
 

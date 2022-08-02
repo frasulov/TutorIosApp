@@ -36,6 +36,7 @@ class SearchController: UIViewController {
     var searchTableType = SearchTableType.categories
     var leftNavigationBtn: UIBarButtonItem?
     var searchBy: String?
+    var bySubCategory: SubCategory?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +56,8 @@ class SearchController: UIViewController {
         self.table.reloadData()
         self.searchTextField.endEditing(true)
         self.searchBy = nil
+        self.searchTextField.text = ""
+        self.bySubCategory = nil
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,7 +93,6 @@ class SearchController: UIViewController {
         controller.callback = { sortByString, filterArray in
             self.searchTableType = .searchResult
             self.table.reloadData()
-            print("i am in callback")
             print(sortByString, filterArray)
             self.sortBy = sortByString
             self.userSelectedFilters = filterArray
@@ -101,7 +103,6 @@ class SearchController: UIViewController {
     }
     
     @IBAction func editStarted(_ sender: Any) {
-        print("i am here babe")
         self.searchTableType = .searchTextTips
         self.table.reloadData()
     }
@@ -128,7 +129,6 @@ extension SearchController: UITextFieldDelegate {
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("dsfsdffdsfds--------")
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -163,6 +163,12 @@ extension SearchController {
                 courseElements = courseElements.where {
                     $0.title.starts(with: search)
                 }
+            }
+        }
+        
+        if let sub = self.bySubCategory {
+            courseElements = courseElements.where {
+                $0.subCategory == sub
             }
         }
         courses.removeAll()
@@ -207,6 +213,8 @@ extension SearchController: UITableViewDataSource, UITableViewDelegate {
             cell.createdBy.text = courses[indexPath.row].createdBy?.name
             cell.title.text = courses[indexPath.row].title
             cell.courseImage.image = UIImage(named: courses[indexPath.row].image)
+            cell.category.text = courses[indexPath.row].subCategory?.category?.name
+            cell.subcategory.text = courses[indexPath.row].subCategory?.name
             self.navigationItem.leftBarButtonItem = self.leftNavigationBtn
             return cell
         } else if self.searchTableType == .categories {
@@ -251,6 +259,7 @@ extension SearchController: UITableViewDataSource, UITableViewDelegate {
 
         } else if self.searchTableType == .categories {
             self.searchTableType = .searchResult
+            self.bySubCategory = categories[indexPath.section].subCategoires[indexPath.row]
             table.reloadData()
         } else {
             self.searchTableType = .searchResult

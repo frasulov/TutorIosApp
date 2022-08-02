@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-enum CourseStatus: Int, PersistableEnum {
+enum CourseStatus: Int, PersistableEnum, Codable {
     case draft
     case open
     case active
@@ -22,8 +22,8 @@ class Course: Object {
     @Persisted var image = "defaultCourseImage"
     @Persisted var language: String?
     @Persisted var price: Int?
-    @Persisted var latitude: Float?
-    @Persisted var longitude: Float?
+    @Persisted var latitude: Double?
+    @Persisted var longitude: Double?
     @Persisted var created_at = Date()
     @Persisted var subCategory: SubCategory?
     @Persisted var status = CourseStatus.draft

@@ -110,10 +110,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="category" destination="nl2-m3-WYM" id="afU-cJ-jhY"/>
                 <outlet property="courseImage" destination="aNx-pP-vDC" id="zQ4-yO-8HE"/>
                 <outlet property="createdBy" destination="acM-G2-Tve" id="2qi-pp-jaA"/>
                 <outlet property="language" destination="Xkm-6f-EM8" id="MeU-VX-n0X"/>
                 <outlet property="price" destination="fUw-m0-71v" id="P6e-kd-lzD"/>
+                <outlet property="subcategory" destination="MUG-De-nZF" id="q8f-bt-hds"/>
                 <outlet property="title" destination="Skp-X3-sxw" id="i6q-Xj-Sie"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="71.651785714285708"/>

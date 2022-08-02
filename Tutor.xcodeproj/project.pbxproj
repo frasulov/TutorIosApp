@@ -24,6 +24,12 @@
 		B81E271E28898CA800F9F933 /* ProfileInfoUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81E271D28898CA800F9F933 /* ProfileInfoUpdateController.swift */; };
 		B81E2720288A78A400F9F933 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81E271F288A78A400F9F933 /* User.swift */; };
 		B85300AB28968F2B00965189 /* CreateCourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85300AA28968F2B00965189 /* CreateCourseController.swift */; };
+		B85300B02899077F00965189 /* TutorCoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85300AF2899077F00965189 /* TutorCoursesController.swift */; };
+		B85300B32899083A00965189 /* TutorCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85300B12899083A00965189 /* TutorCourseCell.swift */; };
+		B85300B42899083A00965189 /* TutorCourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B85300B22899083A00965189 /* TutorCourseCell.xib */; };
+		B85300B72899090100965189 /* init.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85300B62899090100965189 /* init.swift */; };
+		B85300B92899091500965189 /* initial_data.json in Resources */ = {isa = PBXBuildFile; fileRef = B85300B82899091500965189 /* initial_data.json */; };
+		B85300BB289909F200965189 /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85300BA289909F200965189 /* models.swift */; };
 		B85BB97F288EB8DE00A0A1A4 /* EducationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85BB97E288EB8DE00A0A1A4 /* EducationController.swift */; };
 		B85BB981288FB82B00A0A1A4 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85BB980288FB82B00A0A1A4 /* FilterController.swift */; };
 		B85BB983288FC05100A0A1A4 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85BB982288FC05100A0A1A4 /* Filter.swift */; };
@@ -73,6 +79,12 @@
 		B81E271D28898CA800F9F933 /* ProfileInfoUpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoUpdateController.swift; sourceTree = "<group>"; };
 		B81E271F288A78A400F9F933 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B85300AA28968F2B00965189 /* CreateCourseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCourseController.swift; sourceTree = "<group>"; };
+		B85300AF2899077F00965189 /* TutorCoursesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorCoursesController.swift; sourceTree = "<group>"; };
+		B85300B12899083A00965189 /* TutorCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorCourseCell.swift; sourceTree = "<group>"; };
+		B85300B22899083A00965189 /* TutorCourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorCourseCell.xib; sourceTree = "<group>"; };
+		B85300B62899090100965189 /* init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = init.swift; sourceTree = "<group>"; };
+		B85300B82899091500965189 /* initial_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = initial_data.json; sourceTree = "<group>"; };
+		B85300BA289909F200965189 /* models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
 		B85BB97E288EB8DE00A0A1A4 /* EducationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationController.swift; sourceTree = "<group>"; };
 		B85BB980288FB82B00A0A1A4 /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		B85BB982288FC05100A0A1A4 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
@@ -152,6 +164,7 @@
 		B81E26F02887308A00F9F933 /* Tutor */ = {
 			isa = PBXGroup;
 			children = (
+				B85300B5289908F300965189 /* data */,
 				B85BB984288FC83800A0A1A4 /* cell */,
 				B81E27182889487B00F9F933 /* controller */,
 				B81E2713288935A700F9F933 /* models */,
@@ -196,13 +209,26 @@
 				B8BB60DB28901A6500D86ED1 /* CourseController.swift */,
 				B8D092A22892FA95009712FC /* CourseMapController.swift */,
 				B85300AA28968F2B00965189 /* CreateCourseController.swift */,
+				B85300AF2899077F00965189 /* TutorCoursesController.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		B85300B5289908F300965189 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				B85300B62899090100965189 /* init.swift */,
+				B85300B82899091500965189 /* initial_data.json */,
+				B85300BA289909F200965189 /* models.swift */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 		B85BB984288FC83800A0A1A4 /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				B85300B12899083A00965189 /* TutorCourseCell.swift */,
+				B85300B22899083A00965189 /* TutorCourseCell.xib */,
 				B8BB60CF288FD34A00D86ED1 /* FilterCell.swift */,
 				B8BB60D0288FD34A00D86ED1 /* FilterCell.xib */,
 				B8BB60D3288FD97C00D86ED1 /* FilterDropdownCell.swift */,
@@ -285,7 +311,9 @@
 			files = (
 				B8BB60DA28900DC100D86ED1 /* CourseSearchCell.xib in Resources */,
 				B8BB60E628912DEF00D86ED1 /* SearchTipCell.xib in Resources */,
+				B85300B92899091500965189 /* initial_data.json in Resources */,
 				B81E27012887308B00F9F933 /* LaunchScreen.storyboard in Resources */,
+				B85300B42899083A00965189 /* TutorCourseCell.xib in Resources */,
 				B8BB60D2288FD34A00D86ED1 /* FilterCell.xib in Resources */,
 				B81E26FE2887308B00F9F933 /* Assets.xcassets in Resources */,
 				B8BB60D6288FD97C00D86ED1 /* FilterDropdownCell.xib in Resources */,
@@ -346,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B85300BB289909F200965189 /* models.swift in Sources */,
 				B81E270A2887406F00F9F933 /* RegisterController.swift in Sources */,
 				B81E2710288923DC00F9F933 /* ForgotPasswordController.swift in Sources */,
 				B81E271C2889885200F9F933 /* ProfileInfoController.swift in Sources */,
@@ -361,12 +390,14 @@
 				B893ECED288C820C00CF216A /* OTPController.swift in Sources */,
 				B8BB60E928912F8C00D86ED1 /* CategoryCell.swift in Sources */,
 				B8BB60DE289025A500D86ED1 /* Course.swift in Sources */,
+				B85300B72899090100965189 /* init.swift in Sources */,
 				B81E26F62887308A00F9F933 /* LoginController.swift in Sources */,
 				B8BB60E02891203500D86ED1 /* Category.swift in Sources */,
 				B8D092A32892FA95009712FC /* CourseMapController.swift in Sources */,
 				B85BB981288FB82B00A0A1A4 /* FilterController.swift in Sources */,
 				B85BB97F288EB8DE00A0A1A4 /* EducationController.swift in Sources */,
 				B8D092AF28939D88009712FC /* RatingCell.swift in Sources */,
+				B85300B32899083A00965189 /* TutorCourseCell.swift in Sources */,
 				B81E26F22887308A00F9F933 /* AppDelegate.swift in Sources */,
 				B8D092B72893B451009712FC /* AllRatingsCell.swift in Sources */,
 				B81E271E28898CA800F9F933 /* ProfileInfoUpdateController.swift in Sources */,
@@ -375,6 +406,7 @@
 				B85300AB28968F2B00965189 /* CreateCourseController.swift in Sources */,
 				B8BB60D5288FD97C00D86ED1 /* FilterDropdownCell.swift in Sources */,
 				B8D092B32893A098009712FC /* CourseDescCell.swift in Sources */,
+				B85300B02899077F00965189 /* TutorCoursesController.swift in Sources */,
 				B85BB983288FC05100A0A1A4 /* Filter.swift in Sources */,
 				B8BB60DC28901A6500D86ED1 /* CourseController.swift in Sources */,
 			);

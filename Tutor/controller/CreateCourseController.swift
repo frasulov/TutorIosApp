@@ -48,6 +48,7 @@ class CreateCourseController: UIViewController {
     func uiSetup() {
         self.categoryField.inputView = pickerView
         self.subcategoryField.inputView = pickerView
+        self.subcategoryField.disabled = true
         
         let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.default
@@ -80,39 +81,39 @@ class CreateCourseController: UIViewController {
     
     
     @IBAction func createBtnTapped(_ sender: Any) {
-//        var error = 0
-//        if titleField.text == "" {
-//            titleError.isHidden = false
-//            error += 1
-//        } else {
-//            titleError.isHidden = true
-//        }
-//
-//        if categoryField.text == "" {
-//            categoryError.isHidden = false
-//            error += 1
-//        } else {
-//            categoryError.isHidden = true
-//        }
-//
-//        if subcategoryField.text == "" {
-//            subcategoryError.isHidden = false
-//            error += 1
-//        } else {
-//            subcategoryError.isHidden = true
-//        }
-//
-//        if error == 0 {
-//            let currentUser = fetchUser()
-//            let course = Course()
-//            course.title = titleField.text!
-//            course.subCategory = selectedSubCategory
-//            course.createdBy = currentUser
-//
-//            try! realm.write {
-//                realm.add(course)
-//            }
-//        }
+        var error = 0
+        if titleField.text == "" {
+            titleError.isHidden = false
+            error += 1
+        } else {
+            titleError.isHidden = true
+        }
+
+        if categoryField.text == "" {
+            categoryError.isHidden = false
+            error += 1
+        } else {
+            categoryError.isHidden = true
+        }
+
+        if subcategoryField.text == "" {
+            subcategoryError.isHidden = false
+            error += 1
+        } else {
+            subcategoryError.isHidden = true
+        }
+
+        if error == 0 {
+            let currentUser = fetchUser()
+            let course = Course()
+            course.title = titleField.text!
+            course.subCategory = selectedSubCategory
+            course.createdBy = currentUser
+
+            try! realm.write {
+                realm.add(course)
+            }
+        }
         
         if let tabbar = self.tabBarController {
             print("tabbar is not null")
@@ -166,6 +167,7 @@ extension CreateCourseController: UIPickerViewDelegate, UIPickerViewDataSource, 
             categoryField.text = categories[row].name
             category = categories[row]
             categoryField.resignFirstResponder()
+            self.subcategoryField.disabled = false
         } else {
             selectedSubCategory = category.subCategoires[row]
             subcategoryField.text = category.subCategoires[row].name

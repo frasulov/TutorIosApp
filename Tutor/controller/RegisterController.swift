@@ -43,6 +43,11 @@ class RegisterController: UIViewController {
 
         uiSetup()
         print("fileUrl: ", realm.configuration.fileURL ?? "no file found")
+        
+        firstname.text = "Fagan"
+        lastname.text = "Rasulov"
+        phone.text = "5566041"
+        email.text = "feqan.resulov.2000@gmail.com"
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -1,0 +1,119 @@
+{
+    "run": true,
+    "users": [
+        {
+            "first_name": "Fagan",
+            "last_name": "Rasulov",
+            "email": "feqan.resulov.2000@gmail.com",
+            "phone": "5566041",
+            "password": "admin123"
+        }
+    ],
+    "filters": [
+        {
+            "section": "Dil Bolumu",
+            "filters": [
+                "Azerbaijan", "Russian", "English"
+            ],
+            "type": "checkbox"
+        },
+        {
+            "section": "Qiymet",
+            "filters": [
+                "300+", "200+", "150+", "100+", "50+"
+            ],
+            "type": "checkbox"
+        },
+        {
+            "section": "Mekan",
+            "filters": [
+                "Online", "Offline"
+            ],
+            "type": "checkbox"
+        },
+        {
+            "section": "Rating",
+            "filters": [
+                "1+", "2+", "3+", "4+"
+            ],
+            "type": "checkbox"
+        },
+        {
+            "section": "Sort by",
+            "filters": [
+                "Price (lowest first)",
+                "Price (Highest first)",
+                "Newest",
+                "Ratings",
+                "Default"
+            ],
+            "type": "dropdown"
+        }
+    ],
+    "categories": [
+        {
+            "name": "Abuturiyent",
+            "sub_categories": ["Kimya", "Fizika", "Riyaziyyat"]
+        },
+        {
+            "name": "1-9 siniife qeder",
+            "sub_categories": ["Riyaziyyat", "Azerbaycan dili", "Cografiya", "Tarix", "Musiqi"]
+        },
+        {
+            "name": "Texnologiya",
+            "sub_categories": ["Web development", "Mobile Development", "Python Programming", "Data Science"]
+        }
+    ],
+    "courses": [
+        {
+            "title": "Test course",
+            "category": "Abuturiyent",
+            "sub_category": "Kimya",
+            "language": "Azerbaycan",
+            "price": 150,
+            "latitude": 40.39480323536722,
+            "longitude": 49.84940146411008,
+            "created_user_email": "feqan.resulov.2000@gmail.com",
+            "image": "testProfileImage",
+            "status": "open"
+        },
+        {
+            "title": "Test draft course",
+            "category": "1-9 siniife qeder",
+            "sub_category": "Riyaziyyat",
+            "price": 150,
+            "created_user_email": "feqan.resulov.2000@gmail.com"
+        },
+        {
+            "title": "Test active course",
+            "category": "Texnologiya",
+            "sub_category": "Data Science",
+            "language": "English",
+            "price": 55,
+            "latitude": 40.37185906185517,
+            "longitude": 49.844042633584316,
+            "created_user_email": "feqan.resulov.2000@gmail.com",
+            "status": "active"
+        },
+        {
+            "title": "Gel programlasirmani menimle oyren",
+            "category": "Texnologiya",
+            "sub_category": "Mobile Development",
+            "language": "English",
+            "price": 250,
+            "created_user_email": "feqan.resulov.2000@gmail.com",
+            "latitude": 40.390123153003266,
+            "longitude": 49.83008576725978,
+            "status": "open"
+        },
+        {
+            "title": "Fizika course completed",
+            "category": "Abuturiyent",
+            "sub_category": "Fizika",
+            "language": "Russian",
+            "price": 99,
+            "created_user_email": "feqan.resulov.2000@gmail.com",
+            "status": "completed"
+        }
+    ]
+}

@@ -16,6 +16,8 @@ enum CellType: String {
 
 class CourseController: UIViewController {
 
+    @IBOutlet weak var courseSubCategory: UILabel!
+    @IBOutlet weak var courseCategory: UILabel!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var bottomViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var courseTutorCourses: UILabel!
@@ -66,6 +68,8 @@ extension CourseController: UIScrollViewDelegate {
         self.courseTutor.text = course.createdBy?.name
         self.courseImage.image = UIImage(named: course.image)
         self.courseLanguage.text = course.language
+        self.courseCategory.text = course.subCategory?.category?.name
+        self.courseSubCategory.text = course.subCategory?.name
         if let price = course.price {
             self.bottomViewPrice.text = "AZN \(price)"
             self.topViewPrice.text = "\(price) AZN"

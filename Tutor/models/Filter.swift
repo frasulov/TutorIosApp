@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 
-enum CourseFilterType: String, PersistableEnum {
+enum CourseFilterType: String, PersistableEnum, Codable {
     case checkbox
     case dropdown
 }
