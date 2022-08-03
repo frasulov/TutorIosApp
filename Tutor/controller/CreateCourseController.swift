@@ -182,9 +182,11 @@ extension CreateCourseController: UIPickerViewDelegate, UIPickerViewDataSource, 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.tag == 1 {
             self.selectedTextField = .category
+            self.subcategoryField.disabled = true
         } else if textField.tag == 2 {
             self.selectedTextField = .subcategory
         }
+        pickerView.reloadInputViews()
     }
     
 }

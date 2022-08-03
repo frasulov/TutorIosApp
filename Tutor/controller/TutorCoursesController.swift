@@ -74,5 +74,72 @@ extension TutorCoursesController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView,
+                       trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
     
+        let course = self.courses[indexPath.row]
+    
+        switch segment.selectedSegmentIndex {
+            case 0:
+                let trash = UIContextualAction(style: .destructive,
+                                               title: "Trash") { [weak self] (action, view, completionHandler) in
+                    self?.handleMoveToTrash(course: course)
+                                                completionHandler(true)
+                }
+                trash.backgroundColor = .systemRed
+                let makeOpen = UIContextualAction(style: .normal,
+                                               title: "To Open") { [weak self] (action, view, completionHandler) in
+                    self?.handleToStatus(course: course, toStatus: .open)
+                                                completionHandler(true)
+                }
+                makeOpen.backgroundColor = .systemOrange
+                return UISwipeActionsConfiguration(actions: [trash, makeOpen])
+            case 1:
+                let makeActive = UIContextualAction(style: .normal,
+                                               title: "To Active") { [weak self] (action, view, completionHandler) in
+                    self?.handleToStatus(course: course, toStatus: .active)
+                                                completionHandler(true)
+                }
+                makeActive.backgroundColor = .systemOrange
+                let makeCompleted = UIContextualAction(style: .normal,
+                                               title: "To Completed") { [weak self] (action, view, completionHandler) in
+                    self?.handleToStatus(course: course, toStatus: .completed)
+                                                completionHandler(true)
+                }
+                makeCompleted.backgroundColor = .systemBlue
+                return UISwipeActionsConfiguration(actions: [makeActive, makeCompleted])
+            case 2:
+                let makeCompleted = UIContextualAction(style: .normal,
+                                               title: "To Completed") { [weak self] (action, view, completionHandler) in
+                    self?.handleToStatus(course: course, toStatus: .completed)
+                                                completionHandler(true)
+                }
+                makeCompleted.backgroundColor = .systemBlue
+                return UISwipeActionsConfiguration(actions: [makeCompleted])
+            default:
+                return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+
+    private func handleToStatus(course: Course, toStatus: CourseStatus) {
+        try! realm.write {
+            course.status = toStatus
+        }
+        segment.selectedSegmentIndex = toStatus.rawValue
+        fetchCoursesByStatus(toStatus)
+        table.reloadData()
+    }
+
+    private func handleMoveToTrash(course: Course) {
+        try! realm.write {
+            realm.delete(course)
+        }
+        fetchCoursesByStatus(.draft)
+        table.reloadData()
+    }
 }

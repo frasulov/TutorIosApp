@@ -215,8 +215,22 @@ extension RegisterController {
                 self.email.layer.borderColor = UIColor(named: "errorColor")?.cgColor
                 error+=1
             } else {
-            self.emailError.isHidden = true
-            self.email.layer.borderColor = UIColor(red: 0.654, green: 0.63, blue: 0.627, alpha: 1).cgColor
+                var isExist = false
+                try! realm.write {
+                    let users = realm.objects(User.self)
+                    isExist = users.where({
+                        $0.email == self.email.text!
+                    }).count == 0 ? false : true
+                }
+                if isExist {
+                    self.emailError.isHidden = false
+                    self.emailError.text = "* Bu email movcuddur"
+                    self.email.layer.borderColor = UIColor(named: "errorColor")?.cgColor
+                    error+=1
+                } else {
+                    self.emailError.isHidden = true
+                    self.email.layer.borderColor = UIColor(red: 0.654, green: 0.63, blue: 0.627, alpha: 1).cgColor
+                }
             }
         }
 
